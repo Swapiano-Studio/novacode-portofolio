@@ -7,26 +7,27 @@ import ProjectSection from '../component/ProjectSection'
 import ContactSection from '../component/ContactSection'
 import Footer from '../component/Footer'
 
+
 const Home = (toast) => {
   return (
-    <div className='min-h-screen bg-background texr-foreground overflow-x-hidden'>
+    <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Background Effects */}
       <StarBackground />
       {/* Navbar */}
       <NavBar />
       {/* Main Content */}
-      <main>
+      <main className="flex-grow">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectSection />
-        <ContactSection toast={toast}/>
+        <ContactSection toast={toast} />
       </main>
 
       {/* Footer */}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Home

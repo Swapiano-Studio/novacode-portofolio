@@ -45,23 +45,26 @@ const ProjectSection = () => {
           Here are some of my featured projects that I've worked on. You can
           find the source code for each project on my GitHub page.
         </p>
-        <div className="grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover relative"
             >
               <div className="h-40 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-hover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-2">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-primary/10 text-secondary-foreground">
+                    <span
+                      key={tag}
+                      className="px-2 py-1 text-xs font-medium rounded-full bg-primary/10 text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -70,26 +73,24 @@ const ProjectSection = () => {
                 <p className="text-muted-foreground text-justify px-4 text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      {" "}
-                      <ExternalLink size={20} />{" "}
-                    </a>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      {" "}
-                      <Github size={20} />{" "}
-                    </a>
-                  </div>
-                </div>
+              </div>
+              <div className="absolute bottom-2 right-2 flex space-x-5">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                >
+                  <ExternalLink size={20} />
+                </a>
+                <a
+                  href={project.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                >
+                  <Github size={20} />
+                </a>
               </div>
             </div>
           ))}

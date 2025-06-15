@@ -128,7 +128,7 @@ const ContactSection = () => {
               </h3>
               <div className="flex space-x-6 justify-center md:justify-start text-primary text-2xl">
                 <a
-                  href="linkedin.com/in/i-kadek-sananda-nova-herawan-a49a7b302"
+                  href="https://linkedin.com/in/i-kadek-sananda-nova-herawan-a49a7b302"
                   target="_blank"
                   aria-label="LinkedIn"
                   className="hover:text-primary/80 transition-colors"
