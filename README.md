@@ -25,7 +25,7 @@ This is a personal portfolio website built with React and Tailwind CSS. It showc
 
    ```bash
    git clone https://github.com/Swapiano-Studio/novacode-portofolio
-   cd portofolio
+   cd novacode-portofolio
    ```
 
 2. Install dependencies:
